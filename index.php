@@ -27,18 +27,27 @@
     <h3>Stampa della lunghezza della stringa</h3>
     <p>
         <?php
-        echo "La lunghezza di questo paragrafo è " . strlen($my_paragraph) . " caratteri."
+        echo "La lunghezza di questo paragrafo è di " . strlen($my_paragraph) . " caratteri."
         ?>
     </p>
 
+    <h3>Parola inserita dall'utente col parametro URL "name"</h3>
+
     <?php
     $user_word = $_GET["name"];
-    echo "Hello " . $user_word . "!";
+    echo "Parola inserita: " . $user_word;
     ?>
 
+    <h3>Paragrafo "censurato"</h3>
     <p>
         <?php
-            echo $user_word;
+        $new_paragraph = str_replace($user_word, "***", $my_paragraph);
+        echo $new_paragraph;
+        ?>
+    </p>
+    <p>
+        <?php
+        echo "La lunghezza del nuovo paragrafo è di " . strlen($new_paragraph) . " caratteri."
         ?>
     </p>
 </body>
